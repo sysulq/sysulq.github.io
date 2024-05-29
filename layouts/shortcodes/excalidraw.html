@@ -1,0 +1,25 @@
+<div id="excalidraw-container-{{ (.Get "src") }}"></div>
+<script>
+
+    fetch("/"+{{ (.Get "src") }})
+    .then(response => response.json())
+    .then(data => {
+        (async () => {
+            if (document.body.classList.contains('dark')) {
+                data.appState = {
+                    exportBackground: false,
+                    exportWithDarkMode: true
+                }
+            }
+
+            var svg = await ExcalidrawUtils.exportToSvg(data);
+
+            var container = document.getElementById("excalidraw-container-{{ (.Get "src") }}");
+            container.innerHTML = svg.outerHTML;
+
+            var svg = container.querySelector("svg");
+            svg.setAttribute("width", "100%");
+            svg.setAttribute("height", "100%");
+        })();
+    });
+</script>
