@@ -58,7 +58,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: 大可
-    subtitle: "A senior father with one son and one daughter, trying to be an interesting person."
+    subtitle: "Husband, Senior Father of two, Software Engineer/Architecture, trying to be an interesting person."
     imageUrl: "https://avatars.githubusercontent.com/u/1734615?v=4"
     imageWidth: 120
     imageHeight: 120
